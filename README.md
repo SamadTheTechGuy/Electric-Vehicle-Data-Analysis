@@ -41,6 +41,9 @@ This dataset was made available on data.gov provided by the Department of Licens
 * The 3 categories of the vehicle model for clean alternative fuel vehicle(CAFV) are: **Eligible, Not Eligible, and Unknown**.
 ![Screenshot (146)](https://github.com/SamadTheTechGuy/Electric-Vehicle-Data-Analysis/assets/97789215/5f66360e-0f48-45b2-8d0f-fac721559cac)
 
+* More of the vehicles **were eligible** for clean_alternative_fuel_vehicle (CAFV).
+![Screenshot (148)](https://github.com/SamadTheTechGuy/Electric-Vehicle-Data-Analysis/assets/97789215/483228c3-72c0-4a79-bda6-9e36e7c01fca)
+
 
 
 

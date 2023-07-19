@@ -6,6 +6,7 @@ The electric vehicle population data of two main electric vehicles provided by t
 This dataset was made available on data.gov provided by the Department of Licensing, Washington state. It shows the Battery Electric Vehicles (BEVs) and Plug-in Hybrid Electric Vehicles (PHEVs) information currently registered through the department. It consists of 125,000 rows and 17 columns.
 ## Problem Questions
 *  What are the total number of Battery Electric Vehicle (BEV) and Plug-in Hybrid Electric Vehicle (PHEV) registered?
+*  Which state, city, and county had the highest number of registered BEV?
 *  What are the model years of the vehicle?
 *  Which model has the highest registered number of electric vehicle with the model year?
 *  Who are the top 10 manufacturers of the electric vehicle?
@@ -34,8 +35,12 @@ This dataset was made available on data.gov provided by the Department of Licens
 *  **Tesla** is the top manufacturer of the electric vehicle.
 ![Screenshot (141)](https://github.com/SamadTheTechGuy/Electric-Vehicle-Data-Analysis/assets/97789215/7b9d15cd-4fff-4889-820e-9d7d118ef0d5)
 
-* **Model 3** ranked the top electric vehicle model.
+* **Model 3** ranked as the top electric vehicle model.
 ![Screenshot (144)](https://github.com/SamadTheTechGuy/Electric-Vehicle-Data-Analysis/assets/97789215/02d4e3d1-e929-4dcc-ab80-1174208bee3e)
+
+* The 3 categories of the vehicle model for clean alternative fuel vehicle(CAFV) are: **Eligible, Not Eligible, and Unknown**.
+![Screenshot (146)](https://github.com/SamadTheTechGuy/Electric-Vehicle-Data-Analysis/assets/97789215/5f66360e-0f48-45b2-8d0f-fac721559cac)
+
 
 
 

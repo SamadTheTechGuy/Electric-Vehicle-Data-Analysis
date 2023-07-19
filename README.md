@@ -34,6 +34,10 @@ This dataset was made available on data.gov provided by the Department of Licens
 *  **Tesla** is the top manufacturer of the electric vehicle.
 ![Screenshot (141)](https://github.com/SamadTheTechGuy/Electric-Vehicle-Data-Analysis/assets/97789215/7b9d15cd-4fff-4889-820e-9d7d118ef0d5)
 
+* **Model 3** ranked the top electric vehicle model.
+![Screenshot (143)](https://github.com/SamadTheTechGuy/Electric-Vehicle-Data-Analysis/assets/97789215/62a676c5-ef6d-4b72-9f1f-1881f1b4bc3a)
+
+
 
  
 

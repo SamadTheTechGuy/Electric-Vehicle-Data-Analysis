@@ -14,7 +14,7 @@ This dataset was made available on data.gov provided by the Department of Licens
 *  What are the categories of the vehicle model for clean alternative fuel vehicle(CAFV) with their model year?
 *  What is the the total number of vehicle categories by model for CAFV that are Eligible, Non-eligible, or unknown?
 *  Which vehicle model with its electric type covers the highest electric range (miles) greater than 100miles per electric charge?
-*  What are the top 10 vehicle model that are not eligible for CAFV but can cover higher electric range?
+*  Which are the vehicle models that are not eligible for CAFV but can cover higher electric range?
 *  What are the ranges for the lowest suggested retail price for the vehicle models with their model year and type by the manufacturers?
 ## Tools used
 *  Postgresql
@@ -47,6 +47,8 @@ This dataset was made available on data.gov provided by the Department of Licens
 * **Model S** with electric vehicle type **BEV** had the highest electric range - **337 miles per electric charge**.
 ![Screenshot (150)](https://github.com/SamadTheTechGuy/Electric-Vehicle-Data-Analysis/assets/97789215/e9a0029b-10b6-4601-a7c5-69441d81b859)
 
+* **NIRO and IONIQ** are the only two vehicle models not eligible for CAFV but can still cover higher range above 100miles.
+![Screenshot (152)](https://github.com/SamadTheTechGuy/Electric-Vehicle-Data-Analysis/assets/97789215/dc445f1e-8491-45bc-8889-818f446ec556)
 
 
  

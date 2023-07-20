@@ -53,7 +53,8 @@ This dataset was made available on data.gov provided by the Department of Licens
 * **PORSCHE 918 2015 PHEV** had the highest manufacturer's suggested lowest retail price while **KIA SOUL 2016 BEV** had the lowest.
 ![Screenshot (155)](https://github.com/SamadTheTechGuy/Electric-Vehicle-Data-Analysis/assets/97789215/fc8f68bb-f3d0-4217-90ed-174887f8d4e8)
 
-![Screenshot (155)](https://github.com/SamadTheTechGuy/Electric-Vehicle-Data-Analysis/assets/97789215/ef2c0b3c-7ce9-4c42-a56e-d7006225db18)
+![Screenshot (156)](https://github.com/SamadTheTechGuy/Electric-Vehicle-Data-Analysis/assets/97789215/1976e12d-4f80-467b-bf6e-06c95ec563ca)
+
 
  
 

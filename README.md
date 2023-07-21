@@ -47,7 +47,7 @@ This dataset was made available on data.gov provided by the Department of Licens
 * **Model S** with electric vehicle type **BEV** had the highest electric range - **337 miles per electric charge**.
 ![Screenshot (150)](https://github.com/SamadTheTechGuy/Electric-Vehicle-Data-Analysis/assets/97789215/e9a0029b-10b6-4601-a7c5-69441d81b859)
 
-* **NIRO and IONIQ** are the only two vehicle models not eligible for CAFV but can still cover higher range above 100miles.
+* **NIRO and IONIQ** were the only two vehicle models not eligible for CAFV but can still cover higher range above 100miles.
 ![Screenshot (152)](https://github.com/SamadTheTechGuy/Electric-Vehicle-Data-Analysis/assets/97789215/dc445f1e-8491-45bc-8889-818f446ec556)
 
 * **PORSCHE 918 2015 PHEV** had the highest manufacturer's suggested lowest retail price while **KIA SOUL 2016 BEV** had the lowest.
@@ -55,7 +55,8 @@ This dataset was made available on data.gov provided by the Department of Licens
 
 ![Screenshot (156)](https://github.com/SamadTheTechGuy/Electric-Vehicle-Data-Analysis/assets/97789215/fdd98c97-0d18-455d-ae4b-40c8f3f3daf7)
 
-
+## Recommendation
+I would suggest that the date for each registration of the vehicle be added to the dataset so as to track the trend of each registration over time - say monthly and yearly. With that, we can have a more convincing data to make a data-driven decision on the records of each vehicle. 
 
  
 

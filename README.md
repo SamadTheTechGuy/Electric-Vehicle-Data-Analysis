@@ -56,7 +56,7 @@ This dataset was made available on data.gov provided by the Department of Licens
 ![Screenshot (156)](https://github.com/SamadTheTechGuy/Electric-Vehicle-Data-Analysis/assets/97789215/fdd98c97-0d18-455d-ae4b-40c8f3f3daf7)
 
 ## Recommendation
-I would suggest that the date for each registration of the vehicle be added to the dataset so as to track the trend of each registration over time - say monthly and yearly. With that, we can have a more convincing data to make a data-driven decision on the records of each vehicle. 
+I would suggest that the date for each registration of the vehicle be added to the dataset so as to track the trend of each registration over time - say monthly and yearly. With that, we can have a more convincing data to give insights that can help in data-driven decision making. 
 
  
 

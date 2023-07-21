@@ -14,7 +14,7 @@ This dataset was made available on data.gov provided by the Department of Licens
 *  What are the categories of the vehicle model for clean alternative fuel vehicle(CAFV) with their model year?
 *  What is the the total number of vehicle categories by model for CAFV that are Eligible, Non-eligible, or unknown?
 *  Which vehicle model with its electric type covers the highest electric range (miles) greater than 100miles per electric charge?
-*  Which are the vehicle models that are not eligible for CAFV but can cover higher electric range?
+*  What are the vehicle models that are not eligible for CAFV but can cover higher electric range?
 *  What are the ranges for the lowest suggested retail price for the vehicle models with their model year and type by the manufacturers?
 ## Tool used
 *  Postgresql

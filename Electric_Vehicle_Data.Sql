@@ -140,7 +140,7 @@ GROUP BY 1,2
 HAVING MAX(electric_range) > 100
 ORDER BY 3 DESC;
 
---To find the top 10 vehicle model that are not eligible for CAFV but can cover higher electric range
+--To find the vehicle model that are not eligible for CAFV but can cover higher electric range
 SELECT 
 	model,
 	Higher_range
@@ -159,7 +159,7 @@ FROM
 	WHERE model is not null
 	ORDER BY 3 DESC) X
 WHERE Vehicle_Categories = 'Not Eligible'
-LIMIT 10;
+AND Higher_range > 100;
 
 --To find the range for the lowest suggested retail price for the vehicle models with their model year 
 --and type by the manufacturers 

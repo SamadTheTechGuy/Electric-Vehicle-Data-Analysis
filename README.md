@@ -1,5 +1,5 @@
 # Electric-Vehicle-Data-Analysis
-This is an exploratory analysis of an eletric vehicle data.
+This is an exploratory analysis of an electric vehicle data.
 # Brief Introduction
 The electric vehicle population data of two main electric vehicles provided by the Department of Licensing: The Battery Electric Vehicle (BEV) - an all-electric vehicle using one or more batteries to store the electrical energy that powers the motor and is charged by plugging the vehicle into an electric power source. A Plug-in Hybrid Electric Vehicle (PHEV) - a vehicle that uses one or more batteries to power an electric motor; uses another fuel, such as gasoline or diesel, to power an internal combustion engine or other propulsion source; and is charged by plugging the vehicle in to an electric power source. So, recently, the Director of the Department hired me as a data analyst to help find some insightful information about the data.
 ## Brief Overview of the dataset

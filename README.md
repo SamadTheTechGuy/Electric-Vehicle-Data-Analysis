@@ -28,7 +28,7 @@ This dataset was made available on data.gov provided by the Department of Licens
 ![Screenshot (136)](https://github.com/SamadTheTechGuy/Electric-Vehicle-Data-Analysis/assets/97789215/7c7d6ca3-379c-46fd-8672-998e5f0fe74e)
 
 *  **Washinghton state**, **Seatle city**, and **King county** had the highest number of registered BEV.
-*  The model year of the vehicles range from **1997 to 2023** excluding 2001, 2004, 2005, 2006, and 2007.
+*  The model year of the vehicles ranges from **1997 to 2023** excluding 2001, 2004, 2005, 2006, and 2007.
 *  **Model Y 2022** had the highest registered number with a total of **7,558 registrations**.
 ![Screenshot (139)](https://github.com/SamadTheTechGuy/Electric-Vehicle-Data-Analysis/assets/97789215/e2e0b1fd-08f4-467f-9a08-05dfe471c00e)
 

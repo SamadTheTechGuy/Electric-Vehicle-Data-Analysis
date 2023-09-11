@@ -1,3 +1,32 @@
+--To create the table for the dataset
+CREATE TABLE Electric_Vehicle_Data (
+		VIN_1_10 VARCHAR(50),
+		County TEXT,
+		City TEXT,
+		State TEXT,
+		Postal_Code INT,
+		Model_Year INT,
+		Make VARCHAR(50),
+		Model VARCHAR(50),
+		Electric_Vehicle_Type VARCHAR(100),
+		Clean_Alternative_Fuel_Vehicle_CAFV_Eligibility VARCHAR(100),
+		Electric_Range INT,
+		Base_MSRP INT,
+		Legislative_District INT,
+		DOL_Vehicle_ID INT,
+		Vehicle_Location VARCHAR(50),
+		Electric_Utility VARCHAR(250),
+		_2020_Census_Tract BIGINT
+);
+
+--VIN: Vehicle's Identification Number
+--Make: The manufacturer of the vehicle determined by decoding the VIN
+--Base_MRSP: The lowest Manufacturer's Suggested Retail Price for any trim level of the model question
+--DOL_Vehicle_ID: Unique number assigned to each vehicle by Department of Licensing for identification purposes.
+
+--To import the data into pgadmin
+COPY Electric_Vehicle_Data FROM 'C:\Users\Public\Documents\Electric_Vehicle_Population_Data.csv'
+	WITH DELIMITER ',' CSV HEADER;
 --To view the whole dataset
 SELECT * FROM Electric_Vehicle_Data;
 

@@ -57,7 +57,7 @@ SELECT
 FROM Electric_Vehicle_Data
 ORDER BY 2;
 
---To find the number of electric vehicle registered by state
+--To find the number of electric vehicle type registered by state
 SELECT
 	DISTINCT electric_vehicle_type,
 	state,
@@ -76,7 +76,7 @@ WHERE county is not null
 GROUP BY 2,1
 ORDER BY 3 DESC;
 
---To find the number of electric vehicle registered by city
+--To find the number of electric vehicle type registered by city
 SELECT
 	DISTINCT electric_vehicle_type,
 	city,
@@ -86,7 +86,7 @@ WHERE city is not null
 GROUP BY 2,1
 ORDER BY 3 DESC;
 
---To view the model year of the vehicle
+--To view the model year of each vehicle
 SELECT
 	DISTINCT model_year
 FROM Electric_Vehicle_Data

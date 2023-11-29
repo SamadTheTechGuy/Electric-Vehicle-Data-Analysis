@@ -121,7 +121,7 @@ LIMIT 10;
 --To find the categories of the vehicle model for clean alternative fuel vehicle with their model year 
 SELECT
       DISTINCT model,
-		CASE 
+		 CASE 
 		    WHEN clean_alternative_fuel_vehicle_cafv_eligibility = 'Clean Alternative Fuel Vehicle Eligible'
 			THEN 'Eligible' 
 		    WHEN clean_alternative_fuel_vehicle_cafv_eligibility = 'Eligibility unknown as battery range has not been researched'
@@ -135,56 +135,58 @@ ORDER BY 3 DESC;
 
 --To find the the total number of vehicle categories by model for CAFV that are Eligible, Non-eligible, or unknown
 SELECT
-      vehicle_categories,
-      COUNT(*) AS num_vehicle_categories
-FROM
-      (SELECT
-	     DISTINCT model,
-		       CASE 
-		 	    WHEN clean_alternative_fuel_vehicle_cafv_eligibility = 'Clean Alternative Fuel Vehicle Eligible'
-				THEN 'Eligible' 
-			    WHEN clean_alternative_fuel_vehicle_cafv_eligibility = 'Eligibility unknown as battery range has not been researched'
-				THEN 'Unknown'
-			    ELSE 'Not Eligible'
-		       END AS Vehicle_Categories,
-		       model_year
-	FROM Electric_Vehicle_Data
-	WHERE model is not null
-	ORDER BY 3 DESC) x
-WHERE vehicle_categories IN ('Eligible','Not Eligible', 'Unknown')
+    Vehicle_Categories,
+    COUNT(*) AS num_vehicle_categories
+FROM (
+    SELECT
+        CASE 
+            WHEN clean_alternative_fuel_vehicle_cafv_eligibility = 'Clean Alternative Fuel Vehicle Eligible' THEN 'Eligible' 
+            WHEN clean_alternative_fuel_vehicle_cafv_eligibility = 'Eligibility unknown as battery range has not been researched' THEN 'Unknown'
+            ELSE 'Not Eligible'
+        END AS Vehicle_Categories
+    FROM Electric_Vehicle_Data
+    WHERE model IS NOT NULL
+) AS subquery
+WHERE Vehicle_Categories IN ('Eligible', 'Not Eligible', 'Unknown')
 GROUP BY 1
 ORDER BY 2 DESC;
 
---To find the vehicle model with its electric type that covers the highest electric range (miles)
---greater than 100miles per electric charge
+--To find the vehicle model with its electric type that covers the highest electric range (miles) greater than 100miles per electric charge
+WITH RankedElectricVehicles AS (
+    SELECT
+        model,
+        electric_vehicle_type,
+        electric_range,
+        ROW_NUMBER() OVER (PARTITION BY model, electric_vehicle_type ORDER BY electric_range DESC) as rn
+    FROM Electric_Vehicle_Data
+    WHERE model IS NOT NULL AND electric_range > 100
+)
 SELECT
-	DISTINCT model,
-	electric_vehicle_type,
-	MAX(electric_range) as Max_distance
-FROM Electric_Vehicle_Data
-WHERE model is not null
-GROUP BY 1,2
-HAVING MAX(electric_range) > 100
-ORDER BY 3 DESC;
+    model,
+    electric_vehicle_type,
+    electric_range as Max_distance
+FROM RankedElectricVehicles
+WHERE rn = 1
+ORDER BY electric_range DESC;
 
 --To find the vehicle model that are not eligible for CAFV but can cover higher electric range
 SELECT 
 	model,
 	Higher_range
-FROM
-	(SELECT
-		DISTINCT model,
-			CASE 
-	 			WHEN clean_alternative_fuel_vehicle_cafv_eligibility = 'Clean Alternative Fuel Vehicle Eligible'
-					THEN 'Eligible' 
-				WHEN clean_alternative_fuel_vehicle_cafv_eligibility = 'Eligibility unknown as battery range has not been researched'
-					THEN 'Unknown'
-	 			ELSE 'Not Eligible'
-				END AS Vehicle_Categories,
-		MAX(electric_range) OVER(PARTITION BY model) AS Higher_range
-	FROM Electric_Vehicle_Data
-	WHERE model is not null
-	ORDER BY 3 DESC) X
+FROM (
+     SELECT
+	  DISTINCT model,
+		    CASE 
+	 		 WHEN clean_alternative_fuel_vehicle_cafv_eligibility = 'Clean Alternative Fuel Vehicle Eligible'
+				THEN 'Eligible' 
+			 WHEN clean_alternative_fuel_vehicle_cafv_eligibility = 'Eligibility unknown as battery range has not been researched'
+				THEN 'Unknown'
+	 		 ELSE 'Not Eligible'
+		    END AS Vehicle_Categories,
+		    MAX(electric_range) OVER(PARTITION BY model) AS Higher_range
+     FROM Electric_Vehicle_Data
+     WHERE model is not null
+     ) X
 WHERE Vehicle_Categories = 'Not Eligible'
 AND Higher_range > 100;
 

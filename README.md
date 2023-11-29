@@ -12,7 +12,7 @@ This dataset was made available on data.gov provided by the Department of Licens
 *  Who are the top 10 manufacturers of the electric vehicle?
 *  What are the top 10 electric vehicle model?
 *  What are the categories of the vehicle model for clean alternative fuel vehicle(CAFV) with their model year?
-*  What is the the total number of vehicle categories by model for CAFV that are Eligible, Non-eligible, or unknown?
+*  What are the the total number of vehicle categories for CAFV that are Eligible, Non-eligible, or unknown?
 *  Which vehicle model with its electric type covers the highest electric range (miles) greater than 100miles per electric charge?
 *  What are the vehicle models that are not eligible for CAFV but can cover higher electric range?
 *  What are the ranges for the lowest suggested retail price for the vehicle models with their model year and type by the manufacturers?
@@ -47,7 +47,7 @@ This dataset was made available on data.gov provided by the Department of Licens
 ![Screenshot (207)](https://github.com/SamadTheTechGuy/Electric-Vehicle-Data-Analysis/assets/97789215/749b5579-a8d1-4152-bca2-8dbdce514bf3)
 
 * More of the vehicles **were eligible** for clean_alternative_fuel_vehicle (CAFV).
-![Screenshot (209)](https://github.com/SamadTheTechGuy/Electric-Vehicle-Data-Analysis/assets/97789215/4ca328a3-8426-482f-9635-1b66bc311224)
+![Screenshot (264)](https://github.com/SamadTheTechGuy/Electric-Vehicle-Data-Analysis/assets/97789215/e6416063-c966-4a5b-b45a-e049e405625e)
 
 * **Model S** with electric vehicle type **BEV** had the highest electric range - **330 miles per electric charge**.
 ![Screenshot (212)](https://github.com/SamadTheTechGuy/Electric-Vehicle-Data-Analysis/assets/97789215/3d1b41c9-e2f5-4abd-9696-e232a16a9808)

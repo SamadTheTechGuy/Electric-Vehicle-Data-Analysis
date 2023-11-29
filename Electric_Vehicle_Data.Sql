@@ -190,14 +190,13 @@ FROM (
 WHERE Vehicle_Categories = 'Not Eligible'
 AND Higher_range > 100;
 
---To find the range for the lowest suggested retail price for the vehicle models with their model year 
---and type by the manufacturers 
+--To find the range for the lowest suggested retail price for the vehicle models with their model year and type by the manufacturers 
 SELECT
-	DISTINCT make,
-	model,
-	electric_vehicle_type,
-	model_year,
-	Max(base_msrp) AS manufacture_retail_price
+      make,
+      model,
+      electric_vehicle_type,
+      model_year,
+      Max(base_msrp) AS manufacture_retail_price
 FROM Electric_Vehicle_Data
 WHERE base_msrp <> 0
 GROUP BY 1,2,3,4

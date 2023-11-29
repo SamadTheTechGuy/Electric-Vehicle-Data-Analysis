@@ -36,10 +36,10 @@ ALTER TABLE Electric_Vehicle_Data ADD COLUMN row_num INT GENERATED ALWAYS AS IDE
 
 DELETE FROM Electric_Vehicle_Data
 WHERE row_num IN (
-				SELECT MAX(row_num)
-				FROM Electric_Vehicle_Data
-				GROUP BY county, city
-				HAVING COUNT(*) > 1);
+		  SELECT MAX(row_num)
+		  FROM Electric_Vehicle_Data
+		  GROUP BY county, city
+		  HAVING COUNT(*) > 1);
 				
 ALTER TABLE Electric_Vehicle_Data DROP COLUMN row_num;
 
@@ -48,29 +48,27 @@ SELECT
 	DISTINCT electric_vehicle_type
 FROM Electric_Vehicle_Data;
 
---To find the total number of Battery Electric Vehicle (BEV) 
---and Plug-in Hybrid Electric Vehicle (PHEV) registered
+--To find the total number of Battery Electric Vehicle (BEV) and Plug-in Hybrid Electric Vehicle (PHEV) registered
 SELECT
-	DISTINCT electric_vehicle_type,
-	COUNT(*) OVER (PARTITION BY electric_vehicle_type)
-					AS num_registered_vehicle
+      DISTINCT electric_vehicle_type,
+      COUNT(*) OVER (PARTITION BY electric_vehicle_type) AS num_registered_vehicle				
 FROM Electric_Vehicle_Data
 ORDER BY 2;
 
 --To find the number of electric vehicle type registered by state
 SELECT
-	DISTINCT electric_vehicle_type,
-	state,
-	COUNT(*) AS num_registered_vehicle_state
+      electric_vehicle_type,
+      state,
+      COUNT(*) AS num_registered_vehicle_state
 FROM Electric_Vehicle_Data
 GROUP BY 2,1
 ORDER BY 3 DESC;
 
 --To find the number of electric vehicle type registered by county
 SELECT
-	DISTINCT electric_vehicle_type,
-	county,
-	COUNT(*) AS num_registered_vehicle_county
+      electric_vehicle_type,
+      county,
+      COUNT(*) AS num_registered_vehicle_county
 FROM Electric_Vehicle_Data
 WHERE county is not null
 GROUP BY 2,1
@@ -78,9 +76,9 @@ ORDER BY 3 DESC;
 
 --To find the number of electric vehicle type registered by city
 SELECT
-	DISTINCT electric_vehicle_type,
-	city,
-	COUNT(*) AS num_registered_vehicle_city
+      electric_vehicle_type,
+      city,
+      COUNT(*) AS num_registered_vehicle_city
 FROM Electric_Vehicle_Data
 WHERE city is not null
 GROUP BY 2,1
@@ -88,15 +86,15 @@ ORDER BY 3 DESC;
 
 --To view the model year of each vehicle
 SELECT
-	DISTINCT model_year
+     DISTINCT model_year
 FROM Electric_Vehicle_Data
 ORDER BY model_year;
 
 --To find the model that has the highest registered number of electric vehicle with the model year
 SELECT
-	DISTINCT model,
-	model_year,
-	COUNT(*) AS num_registered_vehicle
+      model,
+      model_year,
+      COUNT(*) AS num_registered_vehicle
 FROM Electric_Vehicle_Data
 WHERE model is not null
 GROUP BY 1,2
@@ -104,8 +102,8 @@ ORDER BY 3 DESC;
 
 --To find the top 10 manufacturers of the electric vehicle
 SELECT
-	DISTINCT make,
-	COUNT(*) AS num_manufacturers
+      make,
+      COUNT(*) AS num_manufacturers
 FROM Electric_Vehicle_Data
 GROUP BY 1
 ORDER BY 2 DESC
@@ -113,8 +111,8 @@ LIMIT 10;
 
 --To find the top 10 electric vehicle model
 SELECT
-	DISTINCT model,
-	COUNT(*) AS num_models
+      model,
+      COUNT(*) AS num_models
 FROM Electric_Vehicle_Data
 GROUP BY 1
 ORDER BY 2 DESC
@@ -122,34 +120,34 @@ LIMIT 10;
 
 --To find the categories of the vehicle model for clean alternative fuel vehicle with their model year 
 SELECT
-	DISTINCT model,
+      DISTINCT model,
 		CASE 
-			WHEN clean_alternative_fuel_vehicle_cafv_eligibility = 'Clean Alternative Fuel Vehicle Eligible'
-				THEN 'Eligible' 
-			WHEN clean_alternative_fuel_vehicle_cafv_eligibility = 'Eligibility unknown as battery range has not been researched'
-				THEN 'Unknown'
-			ELSE 'Not Eligible'
-			END AS Vehicle_Categories,
-	model_year
+		    WHEN clean_alternative_fuel_vehicle_cafv_eligibility = 'Clean Alternative Fuel Vehicle Eligible'
+			THEN 'Eligible' 
+		    WHEN clean_alternative_fuel_vehicle_cafv_eligibility = 'Eligibility unknown as battery range has not been researched'
+			THEN 'Unknown'
+		    ELSE 'Not Eligible'
+		END AS Vehicle_Categories,
+     model_year
 FROM Electric_Vehicle_Data
 WHERE model is not null
 ORDER BY 3 DESC;
 
 --To find the the total number of vehicle categories by model for CAFV that are Eligible, Non-eligible, or unknown
 SELECT
-	vehicle_categories,
-	COUNT(*) AS num_vehicle_categories
+      vehicle_categories,
+      COUNT(*) AS num_vehicle_categories
 FROM
-	(SELECT
-		DISTINCT model,
-			CASE 
-	 			WHEN clean_alternative_fuel_vehicle_cafv_eligibility = 'Clean Alternative Fuel Vehicle Eligible'
-					THEN 'Eligible' 
-				WHEN clean_alternative_fuel_vehicle_cafv_eligibility = 'Eligibility unknown as battery range has not been researched'
-					THEN 'Unknown'
-				ELSE 'Not Eligible'
-				END AS Vehicle_Categories,
-		model_year
+      (SELECT
+	     DISTINCT model,
+		       CASE 
+		 	    WHEN clean_alternative_fuel_vehicle_cafv_eligibility = 'Clean Alternative Fuel Vehicle Eligible'
+				THEN 'Eligible' 
+			    WHEN clean_alternative_fuel_vehicle_cafv_eligibility = 'Eligibility unknown as battery range has not been researched'
+				THEN 'Unknown'
+			    ELSE 'Not Eligible'
+		       END AS Vehicle_Categories,
+		       model_year
 	FROM Electric_Vehicle_Data
 	WHERE model is not null
 	ORDER BY 3 DESC) x
